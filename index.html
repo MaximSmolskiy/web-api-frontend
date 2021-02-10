@@ -10,71 +10,73 @@
 
     <title>Web API frontend</title>
   </head>
-  <body>
+  <body style="height: 100vh;">
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <div class="container">
-      <table class="table table-striped table-hover table-bordered caption-top">
-        <caption><center>Employees</center></caption>
-        <nav class="navbar">
-          <div class="form-floating">
-            <input class="form-control" type="search" id="floatingName" placeholder="Name" aria-label="Name">
-            <label for="floatingName">Name</label>
-          </div>
-          <div class="form-floating">
-            <input class="form-control" type="search" id="floatingSurname" placeholder="Surname" aria-label="Surname">
-            <label for="floatingSurname">Surname</label>
-          </div>
-          <button type="button" class="btn btn-outline-primary">Search</button>
-          <button type="button" class="btn btn-outline-primary">Add</button>
-        </nav>
-        <thead class="table-light">
-          <tr>
-            <th scope="col">№</th>
-            <th scope="col">Name</th>
-            <th scope="col">Surname</th>
-            <th scope="col">Date</th>
-            <th scope="col">Position</th>
-            <th scope="col">Salary</th>
-            <th scope="col">Deleting</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Maxim</td>
-            <td>Smolskiy</td>
-            <td>17.01.1999</td>
-            <td>Software Engineer</td>
-            <td>$1,000</td>
-            <td><button type="button" class="btn btn-outline-primary">Delete</button></td>
-          </tr>
-        </tbody>
-      </table>
-      <nav>
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <span class="page-link" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </span>
-          </li>
-          <li class="page-item active" aria-current="page">
-            <span class="page-link">1</span>
-          </li>
-          <li class="page-item disabled">
-            <span class="page-link">2</span>
-          </li>
-          <li class="page-item disabled">
-            <span class="page-link">3</span>
-          </li>
-          <li class="page-item disabled">
-            <span class="page-link" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </span>
-          </li>
-        </ul>
-      </nav>
+    <div class="wrapper h-100">
+      <div class="row justify-content-center h-100">
+        <div class="col-10 align-self-center text-center justify-content-center">
+          <table class="table table-striped table-hover table-bordered caption-top text-center align-middle">
+            <caption class="text-center">Employees</сaption>
+            <thead class="table-light align-middle" style="border-top: 1px solid #fff;">
+              <tr>
+                <th scope="col" class="bg-white border-0"></th>
+                <th scope="col" class="bg-white border-0 col-2"><div class="form-floating">
+                  <input class="form-control" type="search" id="floatingName" placeholder="Name" aria-label="Name" >
+                  <label for="floatingName" class="fw-normal">Name</label>
+                </div></th>
+                <th scope="col" class="bg-white border-0 col-2"><div class="form-floating">
+                  <input class="form-control" type="search" id="floatingSurname" placeholder="Surname" aria-label="Surname">
+                  <label for="floatingSurname" class="fw-normal">Surname</label>
+                </div></th>
+                <th scope="col" class="bg-white border-0"><button type="button" class="btn btn-outline-primary">Search</button></th>
+                <th scope="col" class="bg-white border-0"></th>
+                <th scope="col" class="bg-white border-0"></th>
+                <th scope="col" class="bg-white border-0"><button type="button" class="btn btn-outline-primary">Add</button></th>
+            </thead>
+            <thead class="table-light">
+              <tr>
+                <th scope="col">№</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Date</th>
+                <th scope="col">Position</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Deleting</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Maxim</td>
+                <td>Smolskiy</td>
+                <td>17.01.1999</td>
+                <td>Software Engineer</td>
+                <td>$1,000</td>
+                <td><button type="button" class="btn btn-outline-primary">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <nav>
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <span class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </span>
+              </li>
+              <li class="page-item active" aria-current="page">
+                <span class="page-link">1</span>
+              </li>
+              <li class="page-item disabled">
+                <span class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
   </body>
 </html>
