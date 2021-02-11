@@ -42,7 +42,7 @@
                 <th scope="col" class="bg-white border-0"></th>
                 <th scope="col" class="bg-white border-0"></th>
                 <th scope="col" class="bg-white border-0">
-                  <button type="button" class="btn btn-outline-primary">Add</button>
+                  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#createEmployee">Add</button>
                 </th>
             </thead>
             <thead class="table-light">
@@ -87,6 +87,46 @@
               </li>
             </ul>
           </nav>
+        </div>
+      </div>
+      <div class="modal fade" id="createEmployee" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createEmployeeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="createEmployeeLabel">Create employee</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="floatingName" placeholder="Name" aria-label="Name">
+                  <label for="floatingName" class="fw-normal">Name</label>
+                </div>
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="floatingSurname" placeholder="Surname" aria-label="Surname">
+                  <label for="floatingSurname" class="fw-normal">Surname</label>
+                </div>
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="floatingDate" placeholder="Date" aria-label="Date">
+                  <label for="floatingDate" class="fw-normal">Date</label>
+                </div>
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="floatingPosition" placeholder="Position" aria-label="Position">
+                  <label for="floatingPosition" class="fw-normal">Position</label>
+                </div>
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="floatingSalary" placeholder="Salary" aria-label="Salary">
+                  <label for="floatingSalary" class="fw-normal">Salary</label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="col text-center">
+                <button type="button" class="btn btn-outline-primary">Create</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="modal fade" id="confirmDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
