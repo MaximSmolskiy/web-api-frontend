@@ -10,6 +10,7 @@
 
     <title>Web API frontend</title>
   </head>
+
   <body style="height: 100vh;">
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -21,19 +22,20 @@
             <caption class="text-center">
               <h1>Employees</h1>
             </caption>
+
             <thead class="table-light align-middle" style="border-top: 1px solid #fff;">
               <tr>
                 <th scope="col" class="bg-white border-0"></th>
                 <th scope="col" class="bg-white border-0 col-2">
                   <div class="form-floating">
-                    <input class="form-control" type="search" id="floatingName" placeholder="Name" aria-label="Name">
-                    <label for="floatingName" class="fw-normal">Name</label>
+                    <input class="form-control" type="search" id="searchName" placeholder="Name" aria-label="Name">
+                    <label for="searchName" class="fw-normal">Name</label>
                   </div>
                 </th>
                 <th scope="col" class="bg-white border-0 col-2">
                   <div class="form-floating">
-                    <input class="form-control" type="search" id="floatingSurname" placeholder="Surname" aria-label="Surname">
-                    <label for="floatingSurname" class="fw-normal">Surname</label>
+                    <input class="form-control" type="search" id="searchSurname" placeholder="Surname" aria-label="Surname">
+                    <label for="searchSurname" class="fw-normal">Surname</label>
                   </div>
                 </th>
                 <th scope="col" class="bg-white border-0">
@@ -44,7 +46,9 @@
                 <th scope="col" class="bg-white border-0">
                   <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#createEmployee">Add</button>
                 </th>
+              </tr>
             </thead>
+
             <thead class="table-light">
               <tr>
                 <th scope="col">№</th>
@@ -56,6 +60,7 @@
                 <th scope="col">Deletion</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <th scope="row">1</th>
@@ -70,10 +75,11 @@
               </tr>
             </tbody>
           </table>
+
           <nav>
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">
-                <span class="page-link" aria-label="Previous">
+                <span class="page-link">
                   <span aria-hidden="true">&laquo;</span>
                 </span>
               </li>
@@ -81,7 +87,7 @@
                 <span class="page-link">1</span>
               </li>
               <li class="page-item disabled">
-                <span class="page-link" aria-label="Next">
+                <span class="page-link">
                   <span aria-hidden="true">&raquo;</span>
                 </span>
               </li>
@@ -89,6 +95,7 @@
           </nav>
         </div>
       </div>
+
       <div class="modal fade" id="createEmployee" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createEmployeeLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -96,30 +103,32 @@
               <h5 class="modal-title" id="createEmployeeLabel">Create employee</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="modal-body">
               <form>
                 <div class="mb-3 form-floating">
-                  <input class="form-control" type="search" id="floatingName" placeholder="Name" aria-label="Name">
-                  <label for="floatingName" class="fw-normal">Name</label>
+                  <input class="form-control" type="search" id="createName" placeholder="Name" aria-label="Name">
+                  <label for="createName" class="fw-normal">Name</label>
                 </div>
                 <div class="mb-3 form-floating">
-                  <input class="form-control" type="search" id="floatingSurname" placeholder="Surname" aria-label="Surname">
-                  <label for="floatingSurname" class="fw-normal">Surname</label>
+                  <input class="form-control" type="search" id="createSurname" placeholder="Surname" aria-label="Surname">
+                  <label for="createSurname" class="fw-normal">Surname</label>
                 </div>
                 <div class="mb-3 form-floating">
-                  <input class="form-control" type="search" id="floatingDate" placeholder="Date" aria-label="Date">
-                  <label for="floatingDate" class="fw-normal">Date</label>
+                  <input class="form-control" type="search" id="createDate" placeholder="Date" aria-label="Date">
+                  <label for="createDate" class="fw-normal">Date</label>
                 </div>
                 <div class="mb-3 form-floating">
-                  <input class="form-control" type="search" id="floatingPosition" placeholder="Position" aria-label="Position">
-                  <label for="floatingPosition" class="fw-normal">Position</label>
+                  <input class="form-control" type="search" id="createPosition" placeholder="Position" aria-label="Position">
+                  <label for="createPosition" class="fw-normal">Position</label>
                 </div>
                 <div class="mb-3 form-floating">
-                  <input class="form-control" type="search" id="floatingSalary" placeholder="Salary" aria-label="Salary">
-                  <label for="floatingSalary" class="fw-normal">Salary</label>
+                  <input class="form-control" type="search" id="createSalary" placeholder="Salary" aria-label="Salary">
+                  <label for="createSalary" class="fw-normal">Salary</label>
                 </div>
               </form>
             </div>
+
             <div class="modal-footer">
               <div class="col text-center">
                 <button type="button" class="btn btn-outline-primary">Create</button>
@@ -129,6 +138,7 @@
           </div>
         </div>
       </div>
+
       <div class="modal fade" id="confirmDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -136,7 +146,9 @@
               <h5 class="modal-title" id="confirmDeleteLabel">Confirm delete</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="modal-body">Are you sure you want to delete this employee?</div>
+
             <div class="modal-footer">
               <div class="col text-center">
                 <button type="button" class="btn btn-outline-primary">Yes</button>
