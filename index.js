@@ -1,6 +1,6 @@
 import {getEmployeesList} from './services/employees-service.js';
-import {appendToTableBody} from './DOM/append-to-table-body.js';
+import {updateTableBody} from './DOM/update-table-body.js';
 
 (async () => {
-    appendToTableBody(await getEmployeesList());
+    updateTableBody(await getEmployeesList());
 })();
