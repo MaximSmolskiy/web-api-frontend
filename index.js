@@ -1,6 +1,5 @@
-import {getEmployeesList} from './services/employees-service.js';
-import {updateTableBody} from './DOM/update-table-body.js';
+import {updateTable} from './components/table.js';
 
 (async () => {
-    updateTableBody(await getEmployeesList());
+    await updateTable();
 })();

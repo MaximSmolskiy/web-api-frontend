@@ -1,4 +1,4 @@
-export const tableBodyTemplate = _.template(
+export const tableBodyTemplateString =
     `
     <% employeesList.forEach(employee => { %>
         <tr>
@@ -13,5 +13,4 @@ export const tableBodyTemplate = _.template(
           </td>
         </tr>
     <% }); %>
-    `
-);
+    `;
