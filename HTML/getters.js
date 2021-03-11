@@ -1,0 +1,20 @@
+import {paginationTemplateString} from './template-strings/pagination.js';
+import {tableBodyTemplateString} from './template-strings/table-body.js';
+
+function getHtml(templateString, data) {
+    const compiled = _.template(templateString);
+    const html = compiled(data);
+    return html;
+}
+
+export function getPaginationHtml(isPreviousPageItemActive, page, isNextPageItemActive) {
+    const paginationData = {isPreviousPageItemActive, page, isNextPageItemActive};
+    const paginationHtml = getHtml(paginationTemplateString, paginationData);
+    return paginationHtml;
+}
+
+export function getTableBodyHtml(employeesList) {
+    const tableBodyData = {employeesList};
+    const tableBodyHtml = getHtml(tableBodyTemplateString, tableBodyData);
+    return tableBodyHtml;
+}
