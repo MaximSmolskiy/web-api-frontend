@@ -1,13 +1,13 @@
 import {getEmployeesList} from '../services/employees.js';
-import {updateTableBody, getSearchName, getSearchSurname} from '../DOM/table-body.js';
+import {updateTableBody, getSearchNameValue, getSearchSurnameValue} from '../DOM/table-body.js';
 import {updateNavigation} from './navigation.js';
 
 export async function handleTableClick(event) {
     const target = event.target;
 
     if (target.localName === 'button' && target.innerText === 'Search') {
-        const searchName = getSearchName();
-        const searchSurname = getSearchSurname();
+        const searchName = getSearchNameValue();
+        const searchSurname = getSearchSurnameValue();
         sessionStorage.setItem('searchName', searchName);
         sessionStorage.setItem('searchSurname', searchSurname);
         await updateTable();
@@ -16,8 +16,8 @@ export async function handleTableClick(event) {
 }
 
 export async function updateTable(page = 1) {
-    const searchName = sessionStorage.getItem('searchName');
-    const searchSurname = sessionStorage.getItem('searchSurname');
-    const employeesList = await getEmployeesList(page, searchName, searchSurname);
+    const name = sessionStorage.getItem('searchName');
+    const surname = sessionStorage.getItem('searchSurname');
+    const employeesList = await getEmployeesList({page, name, surname});
     updateTableBody(employeesList);
 }

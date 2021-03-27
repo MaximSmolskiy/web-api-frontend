@@ -1,11 +1,11 @@
 import {getTableBodyHtml} from '../HTML/getters.js';
 import {handleTableClick} from '../components/table.js';
 
-export function getSearchName() {
+export function getSearchNameValue() {
     return $('#searchName').val();
 }
 
-export function getSearchSurname() {
+export function getSearchSurnameValue() {
     return $('#searchSurname').val();
 }
 

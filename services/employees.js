@@ -1,15 +1,10 @@
 import {baseUrl} from '../configuration/config.js';
 
-export async function getEmployeesList(page, name, surname) {
-    let url = `${baseUrl}/employees?page=${page}`;
+export async function getEmployeesList(queryParams) {
+    const nonEmptyQueryParams = Object.fromEntries(Object.entries(queryParams).filter(([_, value]) => value));
 
-    if (name) {
-        url += `&name=${name}`;
-    }
-
-    if (surname) {
-        url += `&surname=${surname}`
-    }
+    let url = new URL(`${baseUrl}/employees`);
+    Object.entries(nonEmptyQueryParams).forEach(([name, value]) => url.searchParams.append(name, value));
 
     const response = await fetch(url);
 

@@ -11,7 +11,7 @@ export function getPageLinkAriaLabel(event) {
     return pageLink.getAttribute('aria-label');
 }
 
-export function getPage() {
+export function getPageNumber() {
     return Number($('.page-link')[1].innerText);
 }
 
