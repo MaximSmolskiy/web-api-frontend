@@ -1,7 +1,7 @@
 import {baseUrl} from '../configuration/config.js';
 
 function getUrl(baseUrl, queryParams) {
-    const nonEmptyQueryParams = Object.fromEntries(Object.entries(queryParams).filter(([_, value]) => value != null));
+    const nonEmptyQueryParams = Object.fromEntries(Object.entries(queryParams).filter(([_, value]) => value));
     let url = new URL(baseUrl);
     Object.entries(nonEmptyQueryParams).forEach(([name, value]) => url.searchParams.append(name, value));
     return url;
