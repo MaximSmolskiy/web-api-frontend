@@ -18,3 +18,10 @@ export async function getEmployeesList(queryParams) {
     const employeesList = await response.json();
     return employeesList;
 }
+
+export async function saveEmployee(employee) {
+    await fetch(`${baseUrl}/employees`,
+        {method: 'POST',
+            headers: {'Content-Type': 'application/json;charset=utf-8'},
+            body: JSON.stringify(employee)});
+}
