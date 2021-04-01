@@ -16,6 +16,10 @@ export async function handleNavigationClick(event) {
 }
 
 async function getIsPageItemActive(page) {
+    if (page <= 0) {
+        return false;
+    }
+
     const name = sessionStorage.getItem('searchName');
     const surname = sessionStorage.getItem('searchSurname');
     const pageEmployeesList = await getEmployeesList({page, name, surname});
