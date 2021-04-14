@@ -13,7 +13,7 @@ export const paginationTemplateString =
           </span>
         </li>
     <% } %>
-    <li class="page-item disabled"" aria-current="page">
+    <li class="page-item disabled" aria-current="page">
       <span class="page-link bg-primary text-white"> <%- page %> </span>
     </li>
     <% if (isNextPageItemActive) { %>
