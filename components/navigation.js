@@ -27,7 +27,7 @@ async function getIsPageItemActive(page) {
     return isPageItemActive;
 }
 
-export async function updateNavigation(page = 1) {
+export async function updateNavigation(page = getPageNumber()) {
     const isPreviousPageItemActive = await getIsPageItemActive(page - 1);
     const isNextPageItemActive = await getIsPageItemActive(page + 1);
     updatePagination(isPreviousPageItemActive, page, isNextPageItemActive);
