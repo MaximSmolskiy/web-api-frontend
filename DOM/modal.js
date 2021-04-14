@@ -5,7 +5,7 @@ export function getCreateFormValues() {
     const surname = $('#createSurname').val();
     const date = $('#createDate').val();
     const position = $('#createPosition').val();
-    const salary = $('#createSalary').val();
+    const salary = Number($('#createSalary').val());
     return {name, surname, date, position, salary};
 }
 
