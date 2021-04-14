@@ -1,12 +1,10 @@
 import {getTableBodyHtml} from '../HTML/getters.js';
 import {handleTableClick} from '../components/table.js';
 
-export function getSearchNameValue() {
-    return $('#searchName').val();
-}
-
-export function getSearchSurnameValue() {
-    return $('#searchSurname').val();
+export function getSearchFormValues() {
+    const name = $('#searchName').val();
+    const surname = $('#searchSurname').val();
+    return {name, surname};
 }
 
 export function updateTableBody(employeesList) {

@@ -20,8 +20,8 @@ async function getIsPageItemActive(page) {
         return false;
     }
 
-    const name = sessionStorage.getItem('searchName');
-    const surname = sessionStorage.getItem('searchSurname');
+    const name = sessionStorage.getItem('name');
+    const surname = sessionStorage.getItem('surname');
     const pageEmployeesList = await getEmployeesList({page, name, surname});
     const isPageItemActive = pageEmployeesList && pageEmployeesList.length !== 0;
     return isPageItemActive;

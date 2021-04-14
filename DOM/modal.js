@@ -1,23 +1,12 @@
 import {handleModalClick} from '../components/modal.js';
 
-export function getCreateNameValue() {
-    return $('#createName').val();
-}
-
-export function getCreateSurnameValue() {
-    return $('#createSurname').val();
-}
-
-export function getCreateDateValue() {
-    return $('#createDate').val();
-}
-
-export function getCreatePositionValue() {
-    return $('#createPosition').val();
-}
-
-export function getCreateSalaryValue() {
-    return $('#createSalary').val();
+export function getCreateFormValues() {
+    const name = $('#createName').val();
+    const surname = $('#createSurname').val();
+    const date = $('#createDate').val();
+    const position = $('#createPosition').val();
+    const salary = $('#createSalary').val();
+    return {name, surname, date, position, salary};
 }
 
 export function addEventListeners() {
