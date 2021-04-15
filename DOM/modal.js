@@ -1,6 +1,6 @@
-import {deleteEmployee, saveEmployee, updateEmployee} from "../services/employees";
-import {updateTable} from "../components/table";
-import {updateNavigation} from "../components/navigation";
+import {deleteEmployee, saveEmployee, updateEmployee} from '../services/employees.js';
+import {updateTable} from '../components/table.js';
+import {updateNavigation} from '../components/navigation.js';
 
 async function handleModalClick(event) {
     const target = event.target;
