@@ -11,8 +11,8 @@ export async function handleNavigationClick(event) {
 
     let page = getPageNumber();
     page = pageLinkAriaLabel === 'Previous' ? page - 1 : page + 1;
-    await updateTable(page);
     await updateNavigation(page);
+    await updateTable(page);
 }
 
 async function getIsPageItemActive(page) {
@@ -28,6 +28,11 @@ async function getIsPageItemActive(page) {
 }
 
 export async function updateNavigation(page = getPageNumber()) {
+    const isPageItemActive = await getIsPageItemActive(page);
+    if (page > 1 && !isPageItemActive) {
+        --page;
+    }
+
     const isPreviousPageItemActive = await getIsPageItemActive(page - 1);
     const isNextPageItemActive = await getIsPageItemActive(page + 1);
     updatePagination(isPreviousPageItemActive, page, isNextPageItemActive);

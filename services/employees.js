@@ -26,3 +26,16 @@ export async function saveEmployee(employee) {
             body: JSON.stringify(employee)});
     return response;
 }
+
+export async function updateEmployee(employeeId, employee) {
+    const response = await fetch(`${baseUrl}/employees/${employeeId}`,
+        {method: 'PUT',
+            headers: {'Content-Type': 'application/json;charset=utf-8'},
+            body: JSON.stringify(employee)});
+    return response;
+}
+
+export async function deleteEmployee(employeeId) {
+    const response = await fetch(`${baseUrl}/employees/${employeeId}`, {method: 'DELETE'});
+    return response;
+}

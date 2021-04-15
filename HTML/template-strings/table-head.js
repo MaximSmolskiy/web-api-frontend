@@ -18,6 +18,7 @@ export const tableHeadTemplateString =
                 </svg>
             <% } %>
         </th>
+        <th scope="col">Update</th>
         <th scope="col">Deletion</th>
     </tr>
     `;

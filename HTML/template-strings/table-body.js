@@ -9,6 +9,9 @@ export const tableBodyTemplateString =
           <td><%- employee.position %></td>
           <td><%- employee.salary %></td>
           <td>
+            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#updateEmployee">Update</button>
+          </td>
+          <td>
             <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#confirmDelete">Delete</button>
           </td>
         </tr>
