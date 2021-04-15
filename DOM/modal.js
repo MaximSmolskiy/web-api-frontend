@@ -9,6 +9,10 @@ export function getCreateFormValues() {
     return {name, surname, date, position, salary};
 }
 
+export function closeCreateForm() {
+    $('#createEmployee').modal('hide');
+}
+
 export function addEventListeners() {
     const modals = Object.values(document.getElementsByClassName('modal'));
     modals.forEach(modal => modal.addEventListener('click', handleModalClick));
