@@ -1,4 +1,57 @@
-import {handleModalClick} from '../components/modal.js';
+import {deleteEmployee, saveEmployee, updateEmployee} from "../services/employees";
+import {updateTable} from "../components/table";
+import {updateNavigation} from "../components/navigation";
+
+async function handleModalClick(event) {
+    const target = event.target;
+    const modal = target.closest('.modal');
+    if (modal.id === 'createEmployee' && target.localName === 'button' && target.innerText === 'Create') {
+        const employee = getCreateFormValues();
+        const response = await saveEmployee(employee);
+
+        if (!response.ok) {
+            const error = await response.json();
+            alert(error.message);
+            return;
+        }
+
+        await updateTable();
+        closeCreateForm();
+        return;
+    }
+
+    if (modal.id === 'updateEmployee' && target.localName === 'button' && target.innerText === 'Update') {
+        const employeeId = sessionStorage.getItem('id');
+        const employee = getUpdateFormValues();
+        const response = await updateEmployee(employeeId, employee);
+
+        if (!response.ok) {
+            const error = await response.json();
+            alert(error.message);
+            return;
+        }
+
+        await updateTable();
+        closeUpdateForm();
+        return;
+    }
+
+    if (modal.id === 'confirmDelete' && target.localName === 'button' && target.innerText === 'Yes') {
+        const employeeId = sessionStorage.getItem('id');
+        const response = await deleteEmployee(employeeId);
+
+        if (!response.ok) {
+            const error = await response.json();
+            alert(error.message);
+            return;
+        }
+
+        await updateNavigation();
+        await updateTable();
+        closeConfirmDeleteModal();
+        return;
+    }
+}
 
 export function getCreateFormValues() {
     const name = $('#createName').val();
