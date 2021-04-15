@@ -7,12 +7,12 @@ import {updateTableHead, getSearchFormValues} from '../DOM/table-head.js';
 export async function handleTableClick(event) {
     const target = event.target;
     if (target.closest('.bi-caret-down-fill')) {
-        sessionStorage.setItem('sort', 'desc');
+        sessionStorage.setItem('sort', 'asc');
         await updateTable();
     }
 
     if (target.closest('.bi-caret-up-fill')) {
-        sessionStorage.setItem('sort', 'asc');
+        sessionStorage.setItem('sort', 'desc');
         await updateTable();
     }
 
