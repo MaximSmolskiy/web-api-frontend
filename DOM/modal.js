@@ -1,6 +1,14 @@
 import {deleteEmployee, saveEmployee, updateEmployee} from '../services/employees.js';
 import {updateTable} from '../components/table.js';
 import {updateNavigation} from '../components/navigation.js';
+import {getModalHtml} from '../HTML/getters.js';
+
+export function updateModals() {
+    const createModalHtml = getModalHtml('create');
+    $('#createEmployeeModal').html(createModalHtml);
+    const updateModalHtml = getModalHtml('update');
+    $('#updateEmployeeModal').html(updateModalHtml);
+}
 
 async function handleModalClick(event) {
     const target = event.target;
