@@ -2,7 +2,7 @@ import {baseUrl} from '../configuration/config.js';
 
 function getUrl(baseUrl, queryParams) {
     const nonEmptyQueryParams = Object.fromEntries(Object.entries(queryParams).filter(([_, value]) => value));
-    let url = new URL(baseUrl);
+    const url = new URL(baseUrl);
     Object.entries(nonEmptyQueryParams).forEach(([name, value]) => url.searchParams.append(name, value));
     return url;
 }
@@ -15,8 +15,8 @@ export async function getEmployeesList(queryParams) {
         return;
     }
 
-    const employeesList = await response.json();
-    return employeesList;
+    const responseJson = await response.json();
+    return responseJson;
 }
 
 export async function saveEmployee(employee) {

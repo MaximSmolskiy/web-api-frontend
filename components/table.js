@@ -7,7 +7,8 @@ export async function updateTable(page = getPageNumber()) {
     const name = sessionStorage.getItem('name');
     const surname = sessionStorage.getItem('surname');
     const sort = sessionStorage.getItem('sort');
-    const employeesList = await getEmployeesList({page, name, surname, sort});
+    const {pagesNumber, employeesList} = await getEmployeesList({page, name, surname, sort});
+    sessionStorage.setItem('pagesNumber', pagesNumber);
     updateTableHead(sort);
     updateTableBody(employeesList);
 }

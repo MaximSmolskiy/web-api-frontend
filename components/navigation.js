@@ -1,6 +1,5 @@
 import {getPageLinkAriaLabel, getPageNumber, updatePagination} from '../DOM/pagination.js';
 import {updateTable} from './table.js';
-import {getEmployeesList} from '../services/employees.js';
 
 export async function handleNavigationClick(event) {
     const pageLinkAriaLabel = getPageLinkAriaLabel(event);
@@ -16,15 +15,8 @@ export async function handleNavigationClick(event) {
 }
 
 async function getIsPageItemActive(page) {
-    if (page <= 0) {
-        return false;
-    }
-
-    const name = sessionStorage.getItem('name');
-    const surname = sessionStorage.getItem('surname');
-    const pageEmployeesList = await getEmployeesList({page, name, surname});
-    const isPageItemActive = pageEmployeesList && pageEmployeesList.length !== 0;
-    return isPageItemActive;
+    const pagesNumber = Number(sessionStorage.getItem('pagesNumber'));
+    return page >= 1 && page <= pagesNumber;
 }
 
 export async function updateNavigation(page = getPageNumber()) {
