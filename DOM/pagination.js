@@ -1,5 +1,5 @@
 import {getPaginationHtml} from '../HTML/getters.js';
-import {handleNavigationClick} from '../components/navigation.js';
+import {handleNavigationClick} from '../elements/navigation.js';
 
 export function getPageLinkAriaLabel(event) {
     const pageLink = event.target.closest('.page-link');

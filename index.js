@@ -1,6 +1,6 @@
-import {updateTable} from './components/table.js';
-import {updateNavigation} from './components/navigation.js';
-import {updateModal} from './components/modal.js';
+import {updateTable} from './elements/table.js';
+import {updateNavigation} from './elements/navigation.js';
+import {updateModal} from './elements/modal.js';
 
 (async () => {
     await updateNavigation(1);

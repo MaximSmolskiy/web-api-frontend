@@ -1,6 +1,6 @@
 import {deleteEmployee, saveEmployee, updateEmployee} from '../services/employees.js';
-import {updateTable} from '../components/table.js';
-import {updateNavigation} from '../components/navigation.js';
+import {updateTable} from '../elements/table.js';
+import {updateNavigation} from '../elements/navigation.js';
 import {getModalHtml} from '../HTML/getters.js';
 
 export function updateModals() {

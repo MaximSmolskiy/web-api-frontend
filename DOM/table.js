@@ -1,6 +1,6 @@
 import {fillUpdateFormValues} from './modal.js';
-import {updateNavigation} from '../components/navigation.js';
-import {updateTable} from '../components/table.js';
+import {updateNavigation} from '../elements/navigation.js';
+import {updateTable} from '../elements/table.js';
 import {getTableBodyHtml, getTableHeadHtml} from '../HTML/getters.js';
 
 async function handleTableClick(event) {
