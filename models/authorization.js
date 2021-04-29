@@ -8,7 +8,7 @@ import {updateTableBody} from '../views/table-body.js';
 function updateTable(isUserAuthorized) {
     updateTopElementsRow({isUserAuthorized});
 
-    const sort = sessionStorage.getItem('salarySortingOrder');
+    const sort = sessionStorage.getItem('sort');
     updateTableHead({sort, isUserAuthorized});
 
     const employeesList = JSON.parse(sessionStorage.getItem('employeesList'));

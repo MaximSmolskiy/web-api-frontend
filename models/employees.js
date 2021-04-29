@@ -15,10 +15,10 @@ export async function updateEmployeesList(data = {}) {
 
     const name = sessionStorage.getItem('name');
     const surname = sessionStorage.getItem('surname');
-    const sort = sessionStorage.getItem('salarySortingOrder');
-    const page = _.clamp(Number(sessionStorage.getItem('pageNumber')), 1, Number(sessionStorage.getItem('pagesNumber')));
+    const sort = sessionStorage.getItem('sort');
+    const page = Math.max(Number(sessionStorage.getItem('page')), 1);
 
-    sessionStorage.setItem('pageNumber', page);
+    sessionStorage.setItem('page', page);
 
     const url = new URL(`${baseUrl}/employees`);
     url.search = new URLSearchParams(_.pickBy({name, surname, sort, page})).toString();
@@ -99,7 +99,7 @@ export async function deleteEmployee(employeeId) {
         const error = await response.json();
         renderErrorMessage(error.message);
     } else {
-        let page = Number(sessionStorage.getItem('pageNumber'));
+        let page = Number(sessionStorage.getItem('page'));
         const pagesNumber = Number(sessionStorage.getItem('pagesNumber'));
         const employeesList = JSON.parse(sessionStorage.getItem('employeesList'));
 
