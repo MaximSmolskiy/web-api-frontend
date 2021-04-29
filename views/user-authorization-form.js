@@ -1,4 +1,4 @@
-import {showAuthorizedUserView} from '../controllers/authorization.js';
+import {processUserAuthorization} from '../controllers/authorization.js';
 
 export function getUserAuthorizationFormValues() {
     const username = $('#userAuthorizationUsername').val();
@@ -6,14 +6,14 @@ export function getUserAuthorizationFormValues() {
     return {username, password};
 }
 
-async function clickHandler(event) {
-    await showAuthorizedUserView();
+export function closeUserAuthorizationForm() {
+    $('#userAuthorizationForm').modal('hide');
+}
+
+async function clickHandler() {
+    await processUserAuthorization();
 }
 
 export function createUserAuthorizationForm() {
     document.getElementById('userAuthorizationButton').addEventListener('click', clickHandler);
-}
-
-export function closeUserAuthorizationForm() {
-    $('#userAuthorizationForm').modal('hide');
 }

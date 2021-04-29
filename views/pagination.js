@@ -6,18 +6,19 @@ export function getPageNumber() {
     return Number($('#pageNumber').text());
 }
 
+export function updatePagination(paginationData) {
+    const paginationHtml = getHtml(paginationTemplateString, paginationData);
+    $('#pagination').html(paginationHtml);
+}
+
 async function clickHandler(event) {
     if (event.target.closest('#previousPage')) {
         await showPreviousPage();
     }
+
     if (event.target.closest('#nextPage')) {
         await showNextPage();
     }
-}
-
-export function updatePagination(paginationData) {
-    const paginationHtml = getHtml(paginationTemplateString, paginationData);
-    $('#pagination').html(paginationHtml);
 }
 
 export function createPagination(paginationData) {

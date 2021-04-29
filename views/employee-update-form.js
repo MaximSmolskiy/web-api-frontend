@@ -1,4 +1,4 @@
-import {showUpdatedEmployee} from '../controllers/employees.js';
+import {processEmployeeUpdate} from '../controllers/employees.js';
 
 export function getUpdatedEmployeeId() {
     return $('#employeeUpdateId').attr('value');
@@ -22,14 +22,14 @@ export function fillEmployeeUpdateForm(employee) {
     $('#employeeUpdateSalary').val(employee.salary)
 }
 
-async function clickHandler(event) {
-    await showUpdatedEmployee();
+export function closeEmployeeUpdateForm() {
+    $('#employeeUpdateForm').modal('hide');
+}
+
+async function clickHandler() {
+    await processEmployeeUpdate();
 }
 
 export function createEmployeeUpdateForm() {
     document.getElementById('employeeUpdateButton').addEventListener('click', clickHandler);
-}
-
-export function closeEmployeeUpdateForm() {
-    $('#employeeUpdateForm').modal('hide');
 }

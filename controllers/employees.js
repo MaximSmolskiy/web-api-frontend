@@ -1,8 +1,8 @@
-import {updateEmployee, updateEmployeesList, saveEmployee, deleteEmployee} from '../models/employees.js';
+import {updateEmployeesList, saveEmployee, updateEmployee, deleteEmployee} from '../models/employees.js';
 import {getEmployeesSearchValues} from '../views/top-elements-row.js';
 import {getSalarySortingOrder} from '../views/table-head.js';
-import {getUpdatedEmployeeId, getEmployeeUpdateFormValues} from '../views/employee-update-form.js';
 import {getEmployeeCreationFormValues} from '../views/employee-creation-form.js';
+import {getUpdatedEmployeeId, getEmployeeUpdateFormValues} from '../views/employee-update-form.js';
 import {getDeletedEmployeeId} from '../views/employee-deletion-modal.js';
 
 export async function searchEmployees() {
@@ -14,14 +14,14 @@ export async function sortEmployees() {
     await updateEmployeesList(getSalarySortingOrder());
 }
 
-export async function showCreatedEmployee() {
+export async function processEmployeeCreation() {
     await saveEmployee(getEmployeeCreationFormValues());
 }
 
-export async function showUpdatedEmployee() {
+export async function processEmployeeUpdate() {
     await updateEmployee(getUpdatedEmployeeId(), getEmployeeUpdateFormValues());
 }
 
-export async function showDeletedEmployee() {
+export async function processEmployeeDeletion() {
     await deleteEmployee(getDeletedEmployeeId());
 }

@@ -54,6 +54,48 @@
         </div>
       </div>
 
+      <div class="modal fade" id="userAuthorizationForm"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="userAuthorizationFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-header text-center d-block">
+
+              <h5 class="modal-title" id="userAuthorizationFormLabel">Authorize user</h5>
+
+              <button type="button" class="btn-close" style="position: absolute; right: 1rem; top: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+
+            <div class="modal-body">
+              <form>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="userAuthorizationUsername" placeholder="Username" aria-label="Username">
+                  <label for="userAuthorizationUsername" class="fw-normal">Username</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="userAuthorizationPassword" placeholder="Password" aria-label="Password">
+                  <label for="userAuthorizationPassword" class="fw-normal">Password</label>
+                </div>
+
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <div class="col text-center">
+
+                <button type="button" class="btn btn-outline-primary" id="userAuthorizationButton">Authorize</button>
+
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       <div class="modal fade" id="employeeCreationForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="employeeCreationFormLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -107,48 +149,6 @@
               <div class="col text-center">
 
                 <button type="button" class="btn btn-outline-primary" id="employeeCreationButton">Create</button>
-
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="userAuthorizationForm"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="userAuthorizationFormLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-
-            <div class="modal-header text-center d-block">
-
-              <h5 class="modal-title" id="userAuthorizationFormLabel">Authorize user</h5>
-
-              <button type="button" class="btn-close" style="position: absolute; right: 1rem; top: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
-
-            </div>
-
-            <div class="modal-body">
-              <form>
-
-                <div class="mb-3 form-floating">
-                  <input class="form-control" type="search" id="userAuthorizationUsername" placeholder="Username" aria-label="Username">
-                  <label for="userAuthorizationUsername" class="fw-normal">Username</label>
-                </div>
-
-                <div class="mb-3 form-floating">
-                  <input class="form-control" type="search" id="userAuthorizationPassword" placeholder="Password" aria-label="Password">
-                  <label for="userAuthorizationPassword" class="fw-normal">Password</label>
-                </div>
-
-              </form>
-            </div>
-
-            <div class="modal-footer">
-              <div class="col text-center">
-
-                <button type="button" class="btn btn-outline-primary" id="userAuthorizationButton">Authorize</button>
 
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
 
