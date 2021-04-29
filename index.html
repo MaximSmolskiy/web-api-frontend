@@ -26,68 +26,233 @@
     <div class="wrapper h-100">
       <div class="row justify-content-center h-100 w-100">
         <div class="col-8 align-self-center text-center justify-content-center">
+
           <table class="table table-striped table-hover table-bordered caption-top text-center align-middle">
+
             <caption class="text-center">
               <h1>Employees</h1>
             </caption>
 
             <thead class="table-light align-middle" style="border-top: 1px solid #fff;">
-              <tr>
-                <th scope="col" class="bg-white border-0"></th>
-                <th scope="col" class="bg-white border-0 col-2">
-                  <div class="form-floating">
-                    <input class="form-control" type="search" id="searchName" placeholder="Name" aria-label="Name">
-                    <label for="searchName" class="fw-normal">Name</label>
-                  </div>
-                </th>
-                <th scope="col" class="bg-white border-0 col-2">
-                  <div class="form-floating">
-                    <input class="form-control" type="search" id="searchSurname" placeholder="Surname" aria-label="Surname">
-                    <label for="searchSurname" class="fw-normal">Surname</label>
-                  </div>
-                </th>
-                <th scope="col" class="bg-white border-0">
-                  <button type="button" class="btn btn-outline-success">Search</button>
-                </th>
-                <th scope="col" class="bg-white border-0"></th>
-                <th scope="col" class="bg-white border-0"></th>
-                <th scope="col" class="bg-white border-0">
-                  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#createEmployee">Add</button>
-                </th>
-              </tr>
+              <tr id="topElementsRow"></tr>
             </thead>
 
-            <thead class="table-light" id="tableHead"></thead>
+            <thead class="table-light">
+              <tr id="tableHead"></tr>
+            </thead>
 
-            <tbody></tbody>
+            <tbody id="tableBody"></tbody>
+
           </table>
 
           <nav>
-            <ul class="pagination justify-content-center"></ul>
+
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+
           </nav>
+
         </div>
       </div>
 
-      <div id="createEmployeeModal"></div>
-
-      <div id="updateEmployeeModal"></div>
-
-      <div class="modal fade" id="confirmDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+      <div class="modal fade" id="employeeCreationForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="employeeCreationFormLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
+
             <div class="modal-header text-center d-block">
-              <h5 class="modal-title" id="confirmDeleteLabel">Confirm delete</h5>
+
+              <h5 class="modal-title" id="employeeCreationFormLabel">Create employee</h5>
+
               <button type="button" class="btn-close" style="position: absolute; right: 1rem; top: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
 
-            <div class="modal-body">Are you sure you want to delete this employee?</div>
+            <div class="modal-body">
+              <form>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="employeeCreationName" placeholder="Name" aria-label="Name">
+                  <label for="employeeCreationName" class="fw-normal">Name</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="employeeCreationSurname" placeholder="Surname" aria-label="Surname">
+                  <label for="employeeCreationSurname" class="fw-normal">Surname</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="date" id="employeeCreationDate" placeholder="Date" aria-label="Date">
+                  <label for="employeeCreationDate" class="fw-normal">Date</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <select class="form-select form-select-sm" type="search" id="employeeCreationPosition" placeholder="Position" aria-label="Position">
+                    <option selected disabled>Choose position</option>
+                    <option>Junior Software Engineer</option>
+                    <option>Software Engineer</option>
+                    <option>Senior Software Engineer</option>
+                    <option>Lead Software Engineer</option>
+                  </select>
+                  <label for="employeeCreationPosition" class="fw-normal">Position</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="employeeCreationSalary" placeholder="Salary" aria-label="Salary">
+                  <label for="employeeCreationSalary" class="fw-normal">Salary</label>
+                </div>
+
+              </form>
+            </div>
 
             <div class="modal-footer">
               <div class="col text-center">
-                <button type="button" class="btn btn-outline-primary">Yes</button>
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">No</button>
+
+                <button type="button" class="btn btn-outline-primary" id="employeeCreationButton">Create</button>
+
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+
               </div>
             </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="userAuthorizationForm"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="userAuthorizationFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-header text-center d-block">
+
+              <h5 class="modal-title" id="userAuthorizationFormLabel">Authorize user</h5>
+
+              <button type="button" class="btn-close" style="position: absolute; right: 1rem; top: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+
+            <div class="modal-body">
+              <form>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="userAuthorizationUsername" placeholder="Username" aria-label="Username">
+                  <label for="userAuthorizationUsername" class="fw-normal">Username</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="userAuthorizationPassword" placeholder="Password" aria-label="Password">
+                  <label for="userAuthorizationPassword" class="fw-normal">Password</label>
+                </div>
+
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <div class="col text-center">
+
+                <button type="button" class="btn btn-outline-primary" id="userAuthorizationButton">Authorize</button>
+
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="employeeUpdateForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="employeeUpdateFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-header text-center d-block">
+
+              <h5 class="modal-title" id="employeeUpdateFormLabel">Update employee</h5>
+
+              <button type="button" class="btn-close" style="position: absolute; right: 1rem; top: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+
+            <div class="modal-body">
+              <form>
+
+                <div id="employeeUpdateId"></div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="employeeUpdateName" placeholder="Name" aria-label="Name">
+                  <label for="employeeUpdateName" class="fw-normal">Name</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="employeeUpdateSurname" placeholder="Surname" aria-label="Surname">
+                  <label for="employeeUpdateSurname" class="fw-normal">Surname</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="date" id="employeeUpdateDate" placeholder="Date" aria-label="Date">
+                  <label for="employeeUpdateDate" class="fw-normal">Date</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <select class="form-select form-select-sm" type="search" id="employeeUpdatePosition" placeholder="Position" aria-label="Position">
+                    <option selected disabled>Choose position</option>
+                    <option>Junior Software Engineer</option>
+                    <option>Software Engineer</option>
+                    <option>Senior Software Engineer</option>
+                    <option>Lead Software Engineer</option>
+                  </select>
+                  <label for="employeeUpdatePosition" class="fw-normal">Position</label>
+                </div>
+
+                <div class="mb-3 form-floating">
+                  <input class="form-control" type="search" id="employeeUpdateSalary" placeholder="Salary" aria-label="Salary">
+                  <label for="employeeUpdateSalary" class="fw-normal">Salary</label>
+                </div>
+
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <div class="col text-center">
+
+                <button type="button" class="btn btn-outline-primary" id="employeeUpdateButton">Update</button>
+
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="employeeDeletionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="employeeDeletionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-header text-center d-block">
+
+              <h5 class="modal-title" id="employeeDeletionModalLabel">Delete employee</h5>
+
+              <button type="button" class="btn-close" style="position: absolute; right: 1rem; top: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+              <div id="employeeDeletionId"></div>
+
+              Are you sure you want to delete this employee?
+            </div>
+
+            <div class="modal-footer">
+              <div class="col text-center">
+
+                <button type="button" class="btn btn-outline-primary" id="employeeDeletionButton">Yes</button>
+
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">No</button>
+
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

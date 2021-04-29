@@ -1,5 +1,3 @@
-import {updateView} from './view/view.js';
+import {createModel} from './models/model.js';
 
-(async () => {
-    await updateView();
-})();
+await createModel();
